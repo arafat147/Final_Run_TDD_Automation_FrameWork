@@ -1,0 +1,76 @@
+X-Path:
+
+1:to find element by single attribute-
+www.freeCRM.com->username
+Example: //input[@name=’username’]
+
+2.to find with multiple attributes-
+www.freeCRM.com->login Button
+Example: //input[@type=’submit’ and @value=’login’]
+So, if using single attribute does not give us 1 of 1 element, we can try using multiple attributes value like this.
+
+3.To create xpath for link using text() function:
+www.freeCRM.com->features link:
+Example: //a[text()=’Features’]
+
+4.To create xpath for link using contains() function:
+//a[contains(text(),’features’)]
+
+5. If there are multiple items with the same value:we can also try:
+(//a[text()=’Sign in’])[1]
+It means we can choose which number we want the driver to select.
+
+6. To go inside a list of elements from a drop down:
+//select[@id='gh-cat'] / option[@value='0']
+Here, the second forward slash(/) allows us to go inside the list.
+
+7.For parent child relationship - check Box:
+www.freeCRM.com->LogIn->Contacts-> to click in checkBox=
+//a[text()='asdrf asdf asdf']
+//parent::td
+//preceding-sibling::td
+//div[@class='ui fitted read-only checkbox']
+
+It means, to go to the parent- simply write //parent::
+To go to preceding-sibling of parent- //preceding-sibling::
+
+
+
+
+
+
+CSS Selector:
+1.tagname # tageValue(id value, type value)
+Example: input#password
+
+2.tagname . class name but without any spaces(we need to remove the space and add . between the classes)
+Example: input.class1.class2.class3
+
+3.We can also use both id and class name together
+Example: input#password.class1.class2.class3
+
+4.To write css with attribute value:
+Example: www.hubspot.com->login
+input[id='username']
+
+5.To use multiple attributes:
+Example: input[id=’username’][type=’email’]
+
+6.To check if an attribute contains something or not, we can create css from that as well:  *
+Example: input[id*=’user’]  {here, instead of using full username, we can see only ‘user’ will also work as 1 of 1 element.
+
+7.Starting text with: ^
+Input[id^=’user’]   (full value is = username)
+
+8.Ending text with: $
+Example: input[id$=’ame’] 	(full value is = username)
+
+9.For Dropdown List: ebay->catagories:
+Example: select#gh-cat>option
+
+10.To choose from a drop down list: we use: first-of-type
+Example: select#gh-cat>option:first-of-type
+{it means it will select the first option from the list. If we want the third then simply write  select#gh-cat>option:third-of-type}
+
+11.To choose the option from a list using nth-of-type() :
+Example: select#gh-cat>option:(2)
