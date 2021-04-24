@@ -15,31 +15,31 @@ public class TestHomePage extends WebAPI {
         homePage= PageFactory.initElements(driver,HomePage.class);
     }
 
-    @Test(enabled = false)
+    @Test(groups = "RegressionTest")
     public void validateSignInFunctionality() throws InterruptedException {
         homePage.loginFunctionality();
     }
 
-    @Test(enabled = false)
+    @Test(groups = "SmokeTest")
     public void validateCheckBox() throws InterruptedException{
         homePage.validateCheckBox();
     }
 
-    @Test(enabled = false)
+    @Test(groups = "SmokeTest")
     public void validateTestStepsForRegisterPage() throws InterruptedException {
         homePage.validateTestStepsForRegisterPage();
     }
 
-    @Test(enabled = false)
+    @Test(groups = "SmokeTest")
     public void validateSignUpPageUrl() throws InterruptedException{
         homePage.validateSignUpPageUrl();
     }
-    @Test(enabled = false)
+    @Test(groups = "SmokeTest")
     public void validatePageDOMHeading() throws InterruptedException{
         homePage.validatePageDOMHeading();
     }
 
-    @Test
+    @Test(groups = "RegressionTest")
     public void validateRegistrationPageDisplayed() throws InterruptedException {
         homePage.validateRegistrationPageDisplayed();
     }

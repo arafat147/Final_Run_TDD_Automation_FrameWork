@@ -21,6 +21,12 @@
     <test name="Amazon HomePage Test Script ">
 
 
+        <groups>
+            <run>
+                <exclude name="SmokeTest"></exclude>
+            </run>
+        </groups>
+
         <classes>
             <!--        Calling Test class-->
             <class name="testHomePage.TestHomePage">
